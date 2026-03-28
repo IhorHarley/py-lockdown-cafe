@@ -23,16 +23,16 @@ class Cafe:
         expiration_date = vaccine.get("expiration_date")
         if expiration_date is None or not isinstance(expiration_date, date):
             raise OutdatedVaccineError(
-                f"Visitor {visitor_name}'s vaccine has expired!"
+                f"Visitor {visitor_name} vaccine has expired!"
             )
         if expiration_date < date.today():
             raise OutdatedVaccineError(
-                f"Visitor {visitor_name}'s vaccine has expired!"
+                f"Visitor {visitor_name} vaccine has expired!"
             )
 
         if not visitor.get("wearing_a_mask", False):
             raise NotWearingMaskError(
-                f"Visitor {visitor_name}'s is not wearing a mask!"
+                f"Visitor {visitor_name} is not wearing a mask!"
             )
 
         return f"Welcome to {self.name}"
